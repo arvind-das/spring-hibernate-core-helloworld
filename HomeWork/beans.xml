@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--autowire types= byName,byType,constructor,default-no,ref  -->
+<!-- <bean id="user" class="com.org.neuron.hello.User" scope="prototype" autowire="byName"> -->
+<bean id="user" class="com.org.neuron.hello.User" scope="prototype" autowire="byName">
+<property name="username" value="arvind"/>
+<property name="email" value="arvind.dass@oodlestechnologies.com"/>
+<property name="phone" value="9990541107"/>
+</bean>
+<bean id="profile" class="com.org.neuron.hello.Profile" scope="prototype">
+</bean>
+<bean id="customer" class="org.neuron.learn.hello.aop.model.Customer" scope="prototype">
+<property name="name" value="arvind"/>
+<property name="city" value="faridabad"/>
+<property name="phone" value="9990541107"/>
+</bean>
+<bean id="beforeInsert" class="org.neuron.learn.hello.aop.dao.methods.BeforeInsert"></bean>
+<bean id="afterInsert" class="org.neuron.learn.hello.aop.dao.methods.AfterInsert"></bean>
+<bean id="customerDAOImpl" class="org.neuron.learn.hello.aop.daoimpl.CustomerDAOImpl"/>
+
+
+<bean id="proxyBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+<property name="proxyInterfaces">
+<list>
+<value>org.neuron.learn.hello.aop.dao.CustomerDAO</value>
+</list>
+</property>
+<property name="target" ref="customerDAOImpl"/>
+<property name="interceptorNames">
+<list>
+<value>beforeInsert</value>
+<value>afterInsert</value>
+</list>
+</property>
+
+</bean>
+</beans>
