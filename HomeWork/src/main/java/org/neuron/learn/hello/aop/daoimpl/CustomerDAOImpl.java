@@ -11,10 +11,10 @@ public class CustomerDAOImpl implements CustomerDAO{
 
 	public void insert(Customer customer) {
 		// TODO Auto-generated method stub
-		System.out.println("Will now try to set customer id and city");
+		System.out.println("Will now set customer information");
 		customer.setCity("Gurgaon");
 		customer.setPhone("9990549");
-		customer.setName("Kakarot ");
+		customer.setName("Neuron ");
 		
         SessionFactory sf=HibernateUtil.getSessionFactory();
         
