@@ -48,6 +48,6 @@ public class Customer {
 	}
 	
 	public void updateUsername(Customer customer){
-		this.name = customer.name+"Goku";
+		this.name = customer.getName()+"Goku";
 	}
 }

@@ -14,11 +14,6 @@
 </bean>
 <bean id="profile" class="com.org.neuron.hello.Profile" scope="prototype">
 </bean>
-<bean id="customer" class="org.neuron.learn.hello.aop.model.Customer" scope="prototype">
-<property name="name" value="arvind"/>
-<property name="city" value="faridabad"/>
-<property name="phone" value="9990541107"/>
-</bean>
 <bean id="beforeInsert" class="org.neuron.learn.hello.aop.dao.methods.BeforeInsert"></bean>
 <bean id="afterInsert" class="org.neuron.learn.hello.aop.dao.methods.AfterInsert"></bean>
 <bean id="customerDAOImpl" class="org.neuron.learn.hello.aop.daoimpl.CustomerDAOImpl"/>

@@ -17,9 +17,10 @@ public class AopApp
         System.out.println( "Hello World!" );
       ApplicationContext ctx=new FileSystemXmlApplicationContext("beans.xml");
       CustomerDAO customerDao = (CustomerDAO)ctx.getBean("proxyBean");
-      Customer customer = (Customer)ctx.getBean("customer");
+      Customer customer = new Customer();
       customerDao.insert(customer);
         System.out.println("city set is "+customer.getCity());
         System.out.println("id set is "+customer.getId());
+        System.out.println("name set is "+customer.getName());
     }
 }
